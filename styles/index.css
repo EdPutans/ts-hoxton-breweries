@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+:root {
+  --primary-color: #1f416d;
+  --secondary-color: #d0bb5e;
+  --secondary-color-darker: #a28c2a;
+  --secondary-color-lighter: #e4d8a3;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.main-header {
+  padding: 1rem;
+  margin-bottom: 2rem;
+
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.select-state-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.select-state-section h2 {
+  font-family: Satisfy, cursive;
+  font-size: 3rem;
+
+  text-align: center;
+}
+
+#select-state-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#select-state-form input {
+  width: 100%;
+
+  border-radius: 0.25rem;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    'sidebar title'
+    'sidebar search-bar'
+    'sidebar article';
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto 1fr;
+}
+
+.filters-section {
+  grid-area: sidebar;
+
+  padding-left: 1rem;
+}
+
+.filters-section h2 {
+  padding: 1rem;
+
+  border-radius: 0.25rem 0.25rem 0 0;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+.filters-section h3 {
+  color: #424242;
+  font-size: 1rem;
+}
+
+.filter-by-city-heading {
+  padding: 1rem 1rem 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+.clear-all-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--secondary-color);
+
+  text-decoration: underline;
+  font-size: 0.725rem;
+}
+
+#filter-by-type-form {
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+#filter-by-type-form label {
+  font-weight: bold;
+}
+
+#filter-by-city-form {
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: 24px auto;
+  align-items: center;
+
+  border-radius: 0 0 0.25rem 0.25rem;
+  border: 1px solid #000;
+  border-top: none;
+}
+
+h1 {
+  grid-area: title;
+
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-bar {
+  grid-area: search-bar;
+
+  padding: 0 1rem;
+  color: white;
+}
+
+#search-breweries-form {
+  padding: 0.25rem 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+}
+
+#search-breweries-form h2 {
+  font-size: 1rem;
+}
+
+article {
+  grid-area: article;
+
+  padding: 1rem;
+}
+
+.breweries-list > * + * {
+  margin-top: 1rem;
+}
+
+.breweries-list li {
+  list-style-type: none;
+
+  padding: 1rem 2rem;
+
+  display: grid;
+  grid-template-areas:
+    'heading heading type'
+    'address phone .'
+    '. . link';
+  grid-template-columns: repeat(2, 1fr) minmax(140px, auto);
+  grid-template-rows: repeat(3, auto);
+
+  border-radius: 0.25rem;
+  border: 1px solid #000;
+}
+
+.breweries-list li h2 {
+  grid-area: heading;
+
+  margin-bottom: 1rem;
+}
+
+.breweries-list li h3 {
+  margin-bottom: 0.25rem;
+
+  color: #424242;
+}
+
+.breweries-list li h3,
+.breweries-list li p {
+  padding-left: 0.5rem;
+}
+
+.breweries-list li .type {
+  grid-area: type;
+  justify-self: end;
+
+  height: max-content;
+  width: 100px;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+
+  border-radius: 0.25rem;
+  background: var(--secondary-color-lighter);
+  color: var(--secondary-color-darker);
+
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.825rem;
+  font-weight: bold;
+}
+
+.breweries-list li .address {
+  grid-area: address;
+}
+
+.breweries-list li .phone {
+  grid-area: phone;
+}
+
+.breweries-list li .link {
+  grid-area: link;
+}
+
+.breweries-list li .link a {
+  display: block;
+  padding: 0.5rem 1rem;
+
+  border-radius: 0.25rem;
+  background-color: var(--secondary-color);
+  color: #fff;
+
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
